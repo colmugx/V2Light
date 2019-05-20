@@ -1,0 +1,35 @@
+@import '../../styles/base';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 0 32px;
+  background-color: #fff;
+
+  .app-name {
+    font-size: 24px;
+    color: $text-color-desc;
+  }
+
+  .navigation {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+
+    &-item {
+      font-size: 32px;
+      font-weight: bold;
+      margin-right: 24px;
+      color: $bg-color;
+      transition: all 260ms ease;
+
+      &.active {
+        font-size: 40px;
+        color: $text-color;
+      }
+    }
+  }
+}

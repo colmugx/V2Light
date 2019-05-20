@@ -1,0 +1,94 @@
+@import '../../styles/base';
+
+.detail {
+  .box {
+    margin: 16px 32px;
+    background-color: #fff;
+    box-shadow: 0 6px 40px 0 rgba(29, 29, 31, 0.07);
+    border-radius: 16px;
+    padding: 16px 32px;
+  }
+
+  .author {
+    display: flex;
+    flex-flow: row nowrap;
+
+    .left {
+      display: flex;
+      margin-right: 32px;
+      image {
+        width: 100px;
+        min-width: 100px;
+        height: 100px;
+        border-radius: 16px;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-flow: column nowrap;
+      margin-top: 8px;
+
+      .author-name {
+        font-weight: bold;
+        font-size: 32px;
+      }
+
+      .author-other {
+        color: $text-color-desc;
+        font-size: 24px;
+      }
+    }
+  }
+
+  .article {
+    &-info {
+      padding: 16px 0;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    &-title {
+      font-weight: bold;
+      font-size: 36px;
+    }
+
+    &-msg {
+      color: $text-color-desc;
+      font-size: 24px;
+    }
+
+    &-content {
+      &-rich {
+        line-height: 1.5;
+        word-break: break-all;
+      }
+    }
+  }
+
+  .comment {
+    &-info {
+      color: $text-color-sub;
+    }
+
+    &-wrapper {
+      border-bottom: 1px solid #f0f0f0;
+
+      &:last-child {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
+
+.navbar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 30px 0 rgba(233, 225, 230, 0.5);
+}
+
+page {
+  background-image: linear-gradient(to top, #f9fcff 0%, #ebf4ff 99%, #ebf4ff 100%);
+  background-attachment: fixed;
+}

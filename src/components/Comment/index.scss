@@ -1,0 +1,58 @@
+@import '../../styles/base';
+
+.comment {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 16px 0;
+
+  .left {
+    display: flex;
+    margin-right: 8px;
+    image {
+      width: 50px;
+      min-width: 50px;
+      height: 50px;
+      border-radius: 12px;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .comment-body {
+      position: relative;
+      background-color: #f0f0f0;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 0 16px 8px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 16px;
+        left: -28px;
+        width: 0;
+        height: 0;
+        border: 16px solid transparent;
+        border-right: 16px solid #f0f0f0;
+      }
+
+      .name {
+        font-weight: bold;
+      }
+
+      .comment-content {
+        line-height: 1.5;
+        word-break: break-all;
+      }
+
+    }
+
+    .other {
+      font-size: 22px;
+      color: $text-color-desc;
+      margin-left: 16px;
+    }
+  }
+}
