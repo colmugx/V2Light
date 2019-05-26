@@ -1,8 +1,9 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, Image, RichText } from '@tarojs/components';
+import { View, Image } from '@tarojs/components';
+import VRichText from '../../components/RichText';
 import { timeFormNow } from '../../utils/util';
 
-import './index.scss'
+import './index.scss';
 
 interface IProps {
   name: string;
@@ -17,13 +18,11 @@ class Comment extends Component<IProps> {
     const { name, avatar, time, floor, content } = this.props;
     return (
       <View className="comment">
-        <View className="left">
-          {avatar ? <Image src={`https:${avatar}`} /> : <View />}
-        </View>
+        <View className="left">{avatar ? <Image src={`https:${avatar}`} /> : <View />}</View>
         <View className="right">
           <View className="comment-body">
             <View className="name">{`${name}:`}</View>
-            <RichText className="comment-content" nodes={content} />
+            <VRichText className="comment-content" nodes={content} />
           </View>
           <View className="other">{`#${floor} · ${timeFormNow(time)}`}</View>
         </View>
