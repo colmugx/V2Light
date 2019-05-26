@@ -24,7 +24,13 @@ class App extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    pages: ['pages/index/index', 'pages/nodes/index', 'pages/about/index', 'pages/detail/index'],
+    pages: [
+      'pages/index/index',
+      // 'pages/nodes/index',
+      'pages/about/index',
+      'pages/detail/index',
+      'pages/member/index',
+    ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#ffffff',
@@ -42,12 +48,12 @@ class App extends Component {
           iconPath: 'assets/home.png',
           selectedIconPath: 'assets/home-hl.png',
         },
-        {
-          text: '节点',
-          pagePath: 'pages/nodes/index',
-          iconPath: 'assets/node.png',
-          selectedIconPath: 'assets/node-hl.png',
-        },
+        // {
+        //   text: '节点',
+        //   pagePath: 'pages/nodes/index',
+        //   iconPath: 'assets/node.png',
+        //   selectedIconPath: 'assets/node-hl.png',
+        // },
         {
           text: '关于',
           pagePath: 'pages/about/index',
@@ -59,7 +65,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    Taro.hideTabBar()
+    Taro.hideTabBar();
   }
 
   componentDidShow() {}

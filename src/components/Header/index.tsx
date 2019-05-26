@@ -9,10 +9,10 @@ const PAGES_LIST = [
     text: '首页',
     pagePath: '/pages/index/index',
   },
-  {
-    text: '节点',
-    pagePath: '/pages/nodes/index',
-  },
+  // {
+  //   text: '节点',
+  //   pagePath: '/pages/nodes/index',
+  // },
   {
     text: '关于',
     pagePath: '/pages/about/index',
