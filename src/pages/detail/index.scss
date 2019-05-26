@@ -9,38 +9,6 @@
     padding: 16px 32px;
   }
 
-  .author {
-    display: flex;
-    flex-flow: row nowrap;
-
-    .left {
-      display: flex;
-      margin-right: 32px;
-      image {
-        width: 100px;
-        min-width: 100px;
-        height: 100px;
-        border-radius: 16px;
-      }
-    }
-
-    .right {
-      display: flex;
-      flex-flow: column nowrap;
-      margin-top: 8px;
-
-      .author-name {
-        font-weight: bold;
-        font-size: 32px;
-      }
-
-      .author-other {
-        color: $text-color-desc;
-        font-size: 24px;
-      }
-    }
-  }
-
   .article {
     &-info {
       padding: 16px 0;

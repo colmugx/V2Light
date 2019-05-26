@@ -3,6 +3,7 @@ import { View, Text, Image } from '@tarojs/components';
 import { AtNavBar, AtActivityIndicator } from 'taro-ui';
 import Wrapper from '../../components/Wrapper';
 import Comment from '../../components/Comment';
+import ProfileCard from '../../components/ProfileCard';
 import VRichText from '../../components/RichText';
 import { getStatusHeight, formatTime, timeFormNow } from '../../utils/util';
 import Api from '../../services/api';
@@ -50,6 +51,12 @@ class DetailPage extends Component<any, IState> {
     Taro.navigateBack();
   };
 
+  gotoProfile = (id: string) => {
+    Taro.navigateTo({
+      url: `/pages/member/index?id=${id}`
+    })
+  }
+
   render() {
     const { data, comments, commentLoading } = this.state;
 
@@ -70,15 +77,15 @@ class DetailPage extends Component<any, IState> {
         />
         <Wrapper headerHeight={61}>
           <View className="detail">
-            <View className="box author">
-              <View className="left">
-                <Image className="avatar" src={`http:${data.member.avatar_normal}`} />
+            {data.member && (
+              <View onClick={() => this.gotoProfile(data.member.id)}>
+                <ProfileCard
+                  avatar={data.member.avatar_normal}
+                  username={data.member.username}
+                  message={data.member.url}
+                />
               </View>
-              <View className="right">
-                <Text className="author-name">{data.member.username}</Text>
-                <Text className="author-other">{data.member.url}</Text>
-              </View>
-            </View>
+            )}
             <View className="box article">
               <View className="article-info">
                 <View className="article-title">{data.title}</View>

@@ -1,0 +1,38 @@
+@import '../../styles/base';
+
+.profile {
+  margin: 16px 32px;
+  background-color: #fff;
+  box-shadow: 0 6px 40px 0 rgba(29, 29, 31, 0.07);
+  border-radius: 16px;
+  padding: 16px 32px;
+  display: flex;
+  flex-flow: row nowrap;
+
+  .left {
+    display: flex;
+    margin-right: 32px;
+    image {
+      width: 100px;
+      min-width: 100px;
+      height: 100px;
+      border-radius: 16px;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 8px;
+
+    .author-name {
+      font-weight: bold;
+      font-size: 32px;
+    }
+
+    .author-other {
+      color: $text-color-desc;
+      font-size: 24px;
+    }
+  }
+}

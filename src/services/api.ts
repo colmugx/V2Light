@@ -12,7 +12,7 @@ class Api {
    * ## 社区介绍
    */
   static getSiteInfo() {
-    return request.get('/site/info.json', {})
+    return request.get('/site/info.json', {});
   }
 
   /**
@@ -37,8 +37,8 @@ class Api {
    */
   static getDetail(id: number) {
     return request.get('/topics/show.json', {
-      id
-    })
+      id,
+    });
   }
 
   /**
@@ -47,20 +47,8 @@ class Api {
    */
   static getDeitalReply(id: number) {
     return request.get('/replies/show.json', {
-      topic_id: id
-    })
-  }
-
-  /**
-   * ## 用户信息
-   * @param {number} id ID
-   * @param {string} username 用户名
-   */
-  static getMember(id?: number, username?: string) {
-    return request.get('/members/show.json', {
-      id,
-      username
-    })
+      topic_id: id,
+    });
   }
 
   /**
@@ -78,7 +66,7 @@ class Api {
    * ## 获取所有节点
    */
   static getNodes() {
-    return request.get('/nodes/all.json', {})
+    return request.get('/nodes/all.json', {});
   }
 
   /**
@@ -88,7 +76,7 @@ class Api {
    * @param {string} username 用户名
    * @param {number} id ID
    */
-  static getProfile(username: string, id: number) {
+  static getProfile({ username, id }: { username?: string; id?: string }) {
     return request.get('/members/show.json', {
       username,
       id,
